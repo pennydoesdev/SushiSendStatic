@@ -1,0 +1,91 @@
+/*
+ * SushiSend design tokens — inlined from @sushisend/ui in the main monorepo.
+ * Keep in sync with packages/ui/src/tokens/tokens.css there.
+ */
+
+:root,
+[data-theme='light'] {
+  --color-brand: #f66a40;
+  --color-brand-hover: #d9522d;
+  --color-brand-subtle: #fff1ec;
+  --color-focus-ring: #ff8259;
+
+  --color-bg: #faf8f6;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1eeea;
+  --color-border: #e2ddd7;
+
+  --color-text-primary: #100e0c;
+  --color-text-secondary: #4f4842;
+  --color-text-muted: #6e665e;
+
+  --color-success: #2e9d5c;
+  --color-warning: #e0a02a;
+  --color-danger: #d43e3e;
+  --color-info: #2f6fe0;
+
+  --font-brand: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Menlo', 'Consolas', monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
+
+  --shadow-sm: 0 1px 2px rgba(16, 14, 12, 0.06);
+  --shadow-md: 0 4px 12px rgba(16, 14, 12, 0.08);
+  --shadow-lg: 0 10px 30px rgba(16, 14, 12, 0.12);
+  --shadow-focus: 0 0 0 3px rgba(255, 130, 89, 0.4);
+
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 320ms;
+  --ease-default: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+[data-theme='dark'] {
+  --color-brand: #ff8259;
+  --color-brand-hover: #ffa17c;
+  --color-brand-subtle: #8c2f1a;
+  --color-focus-ring: #ffa17c;
+
+  --color-bg: #100e0c;
+  --color-surface: #1f1b18;
+  --color-surface-muted: #36312d;
+  --color-border: #36312d;
+
+  --color-text-primary: #faf8f6;
+  --color-text-secondary: #e2ddd7;
+  --color-text-muted: #c8c1b9;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-bg: #100e0c;
+    --color-surface: #1f1b18;
+    --color-surface-muted: #36312d;
+    --color-border: #36312d;
+    --color-text-primary: #faf8f6;
+    --color-text-secondary: #e2ddd7;
+    --color-text-muted: #c8c1b9;
+    --color-brand: #ff8259;
+    --color-brand-hover: #ffa17c;
+    --color-brand-subtle: #8c2f1a;
+    --color-focus-ring: #ffa17c;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+    --ease-default: linear;
+  }
+}

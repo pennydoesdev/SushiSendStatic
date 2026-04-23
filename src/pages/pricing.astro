@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import { PLANS, DEDICATED_IP_ADDON_USD_MONTHLY } from '../lib/billing';
+---
+
+<Base title="Pricing">
+  <section>
+    <span class="eyebrow">Pricing</span>
+    <h1>Simple, predictable pricing.</h1>
+    <p style="color: var(--color-text-secondary); max-width: 640px;">
+      Pricing scales with your contact list and monthly send volume. Add a dedicated IP for
+      <strong>${DEDICATED_IP_ADDON_USD_MONTHLY.toFixed(2)} / month</strong> when you need it.
+    </p>
+  </section>
+
+  <section
+    style="display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 3rem;"
+  >
+    {
+      PLANS.map((plan) => (
+        <article style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+          <h3 style="margin-bottom: 0.5rem;">{plan.name}</h3>
+          <p style="font-size: 2rem; font-weight: 700; margin: 0;">
+            ${plan.monthlyUsd}
+            <span style="font-size: 1rem; font-weight: 400; color: var(--color-text-muted);">
+              / month
+            </span>
+          </p>
+          <p style="color: var(--color-text-secondary); margin-top: 0.5rem;">{plan.description}</p>
+          <ul style="margin-top: 1rem; padding-left: 1.25rem;">
+            <li>{plan.includedContacts.toLocaleString()} contacts</li>
+            <li>{plan.includedSends.toLocaleString()} sends / month</li>
+          </ul>
+        </article>
+      ))
+    }
+  </section>
+
+  <section style="margin-top: 3rem;">
+    <h2>Pricing calculator</h2>
+    <p style="color: var(--color-text-muted);">
+      Phase 7 ships the interactive calculator. The pricing model already lives in
+      <code>src/lib/billing.ts</code>.
+    </p>
+  </section>
+</Base>
